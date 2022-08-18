@@ -16,10 +16,7 @@ func main() {
     let inputY = readLine()
 
     if let stringX = inputX, let stringY = inputY {
-        let optionalX = Decimal(string: stringX)
-        let optionalY = Decimal(string: stringY)
-
-        if let x = optionalX, let y = optionalY {
+        if let x = Decimal(string: stringX), let y = Decimal(string: stringY) {
             print("F(X, Y): \(f(x: x, y: y))")
             print("A: \(findA(x: x, y: y))")
         }
