@@ -15,12 +15,16 @@ func main() {
     print("Please enter Y number")
     let inputY = readLine()
 
-    if let stringX = inputX, let stringY = inputY {
-        if let x = Decimal(string: stringX), let y = Decimal(string: stringY) {
-            print("F(X, Y): \(f(x: x, y: y))")
-            print("A: \(findA(x: x, y: y))")
-        }
+    guard let stringX = inputX, let stringY = inputY else {
+        return
     }
+
+    guard let x = Decimal(string: stringX), let y = Decimal(string: stringY) else {
+        return
+    }
+
+    print("F(X, Y): \(f(x: x, y: y))")
+    print("A: \(findA(x: x, y: y))")
 }
 
 main()

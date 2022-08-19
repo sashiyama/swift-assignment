@@ -33,13 +33,17 @@ func main() {
     print("Please enter number3")
     let inputNumber3 = readLine()
 
-    if let stringN1 = inputNumber1, let stringN2 = inputNumber2, let stringN3 = inputNumber3 {
-        if let n1 = Int(stringN1), let n2 = Int(stringN2), let n3 = Int(stringN3) {
-            let (max, min) = findMaxAndMinDistance(n1: n1, n2: n2, n3: n3)
-            print("Max: \(max)")
-            print("Min: \(min)")
-        }
+    guard let stringN1 = inputNumber1, let stringN2 = inputNumber2, let stringN3 = inputNumber3 else {
+        return
     }
+
+    guard let n1 = Int(stringN1), let n2 = Int(stringN2), let n3 = Int(stringN3) else {
+        return
+    }
+
+    let (max, min) = findMaxAndMinDistance(n1: n1, n2: n2, n3: n3)
+    print("Max: \(max)")
+    print("Min: \(min)")
 }
 
 main()

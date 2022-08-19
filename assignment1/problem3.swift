@@ -10,12 +10,16 @@ func main() {
     print("Please enter a positive number")
     let inputN = readLine()
 
-    if let optionalN = inputN {
-        if let n = Int(optionalN) {
-            printAForNTimes(n: n)
-            print()
-        }
+    guard let optionalN = inputN else {
+        return
     }
+
+    guard let n = Int(optionalN) else {
+        return
+    }
+
+    printAForNTimes(n: n)
+    print()
 }
 
 main()
