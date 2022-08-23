@@ -1,26 +1,7 @@
 import Foundation
 
-func findMaxAndMinDistance(n1: Int, n2: Int, n3: Int) -> (max: Int, min: Int) {
-    var max = abs(n1 - n2)
-    var min = abs(n1 - n2)
-
-    if max < abs(n1 - n3) {
-        max = abs(n1 - n3)
-    }
-
-    if max < abs(n2 - n3) {
-        max = abs(n2 - n3)
-    }
-
-    if min > abs(n1 - n3) {
-        min = abs(n1 - n3)
-    }
-
-    if min > abs(n2 - n3) {
-        min = abs(n2 - n3)
-    }
-
-    return (max: max, min: min)
+func findMaxDistance(n1: Int, n2: Int, n3: Int) -> Int {
+    return abs(max(n1, n2, n3) - min(n1, n2, n3))
 }
 
 func main() {
@@ -41,9 +22,7 @@ func main() {
         return
     }
 
-    let (max, min) = findMaxAndMinDistance(n1: n1, n2: n2, n3: n3)
-    print("Max: \(max)")
-    print("Min: \(min)")
+    print("Max: \(findMaxDistance(n1: n1, n2: n2, n3: n3))")
 }
 
 main()
