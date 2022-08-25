@@ -2,12 +2,12 @@ import Foundation
 
 func main() {
     print("Please enter your first name")
-    let inputFirstName = readLine()
+    let firstName = readLine()
 
     print("Please enter your last name")
-    let inputLastName = readLine()
+    let lastName = readLine()
 
-    guard let firstName = inputFirstName, let lastName = inputLastName else {
+    guard let firstName = firstName, let lastName = lastName else {
         return
     }
 
