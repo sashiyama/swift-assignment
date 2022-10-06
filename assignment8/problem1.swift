@@ -53,8 +53,8 @@ class Square: Shape {
         }
     }
 
-    convenience init(width: Int) {
-        self.init(width: width, height: width)
+    init(width: Int) {
+        super.init(width: width, height: width)
         setAreaAndCircumference(side: width, anotherSide: width)
     }
 
@@ -81,8 +81,8 @@ class Circle: Shape {
         }
     }
 
-    convenience init(width: Int) {
-        self.init(width: width, height: width)
+    init(width: Int) {
+        super.init(width: width, height: width)
         setAreaAndCircumference(side: width, anotherSide: width)
     }
 
