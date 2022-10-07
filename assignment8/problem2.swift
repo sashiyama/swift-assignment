@@ -82,19 +82,29 @@ class ShoppingCart {
 func main() {
     let _ = Product(productID: 110, productName: "Diet Pepsi", productPrice: 2, productMadeInCountry: "USA")
 
-    let pepsi = Drink(drinkID: 412, drinkName: "Pepsi", drinkPrice: 2, drinkMadeInCountry: "USA", isDrinkDiet: false, drinkSize: 150)
+    let shoppingCart = ShoppingCart()
+
+    for _ in 0..<3 {
+        let pepsi = Drink(drinkID: 412, drinkName: "Pepsi", drinkPrice: 2, drinkMadeInCountry: "USA", isDrinkDiet: false, drinkSize: 150)
+        shoppingCart.add(pepsi)
+    }
+
     let gingerZero = Drink(drinkID: 183, drinkName: "Ginger", drinkPrice: 3, drinkMadeInCountry: "Canada", isDrinkDiet: true, drinkSize: 200)
-    let chicken = Food(foodID: 100, foodName: "Chicken", foodPrice: 8, foodMadeInCountry: "Canada", foodCalorie: 350, foodSize: 4, foodIngredients: ["chicken", "oil", "chees"])
-    let pasta = Food(foodID: 101, foodName: "Pasta", foodPrice: 18, foodMadeInCountry: "Canada", foodCalorie: 250, foodSize: 3, foodIngredients: ["pasta", "meat", "spinach"])
+    shoppingCart.add(gingerZero)
+
+    for _ in 0..<2 {
+        let chicken = Food(foodID: 100, foodName: "Chicken", foodPrice: 8, foodMadeInCountry: "Canada", foodCalorie: 350, foodSize: 4, foodIngredients: ["chicken", "oil", "chees"])
+        shoppingCart.add(chicken)
+    }
+
+    for _ in 0..<2 {
+        let pasta = Food(foodID: 101, foodName: "Pasta", foodPrice: 18, foodMadeInCountry: "Canada", foodCalorie: 250, foodSize: 3, foodIngredients: ["pasta", "meat", "spinach"])
+        shoppingCart.add(pasta)
+    }
+
     let cotton = Material(materialCode: 10, materialName: "cotton")
     let nylon = Material(materialCode: 11, materialName: "Nylon")
     let tShirt = Cloth(clothID: 701, clothName: "T-shirt", clothPrice: 15, clothMadeInCountry: "China", clothMaterials: [cotton, nylon])
-
-    let shoppingCart = ShoppingCart()
-    shoppingCart.add(pepsi)
-    shoppingCart.add(gingerZero)
-    shoppingCart.add(chicken)
-    shoppingCart.add(pasta)
     shoppingCart.add(tShirt)
 
     shoppingCart.printNames()
