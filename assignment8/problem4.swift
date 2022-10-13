@@ -77,8 +77,8 @@ class TextExtension {
 }
 
 func main() {
-    print(TextExtension.convertStringToInt(word: "123") ?? "Error")
-    print(TextExtension.convertStringToInt(word: "Yoshi") ?? "Error")
+    print(TextExtension.convertStringToInt(word: "123") ?? "Error!")
+    print(TextExtension.convertStringToInt(word: "Yoshi") ?? "Error!")
     print(TextExtension.isItAnEmail(word: "test@example.com"))
     print(TextExtension.isItAnEmail(word: "fweoifwei"))
     print(TextExtension.validatePassword(password: "12345678"))
