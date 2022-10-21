@@ -9,24 +9,20 @@
 // fibo(n) = fibo(n - 1) + fibo(n - 2) (n > 1)
 
 class Fibonacci {
-    subscript(index: Int) -> Int {
-        return Exec.fibo(index)
+    subscript(n: Int) -> Int {
+        return Fibonacci.fibo(n)
     }
 
-    static subscript(index: Int) -> Int {
-        return Exec.fibo(index)
+    static subscript(n: Int) -> Int {
+        return fibo(n)
     }
 
-    class Exec {
-        static func fibo(_ n: Int) -> Int {
-            if n == 0 {
-                return 0
-            } else if n == 1 {
-                return 1
-            }
-
-            return fibo(n - 1) + fibo(n - 2)
+    static func fibo(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
         }
+
+        return fibo(n - 1) + fibo(n - 2)
     }
 }
 
